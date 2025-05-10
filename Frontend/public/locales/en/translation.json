@@ -1,0 +1,18 @@
+{
+    "log": {
+        "username": "Username",
+        "email": "Email",
+        "password": "Password",
+        "login": "Login",
+        "google": "Login with Google",
+        "or": "or",
+        "signup": "Sign Up",
+        "loading": "Loading..."
+    },
+    "search": "Search",
+    "hero": {
+        "hero_one": "Make Every Moment Count",
+        "hero_two": "Book the Best Events Now",
+        "get_started": "Get Started"
+    }
+}
