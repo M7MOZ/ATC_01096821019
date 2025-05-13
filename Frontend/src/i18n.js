@@ -28,5 +28,10 @@ i18n
     }
   });
 
+export const changeLanguage = (lng) => {
+  i18n.changeLanguage(lng);
+  document.documentElement.lang = lng;
+  document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+};
 
 export default i18n;

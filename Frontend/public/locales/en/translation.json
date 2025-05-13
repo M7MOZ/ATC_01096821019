@@ -4,15 +4,30 @@
         "email": "Email",
         "password": "Password",
         "login": "Login",
-        "google": "Login with Google",
+        "google": "Continue with Google",
         "or": "or",
         "signup": "Sign Up",
-        "loading": "Loading..."
+        "loading": "Loading...",
+        "already": "Already have an account? ",
+        "dont":"Don't have an account? "
     },
-    "search": "Search",
-    "hero": {
-        "hero_one": "Make Every Moment Count",
-        "hero_two": "Book the Best Events Now",
-        "get_started": "Get Started"
+    "header":{
+        "search": "Search",
+        "addEvent": "Add Event"
+    },
+    "categories": {
+        "trending": "Trending",
+        "tours": "Tours",
+        "families": "Families",
+        "adventures": "Adventures",
+        "dates": "Dates",
+        "on-the-water": "On the Water",
+        "food-drink": "Food & Drink",
+        "art-culture": "Art & Culture",
+        "in-the-air": "In the Air",
+        "night-owls": "Night Owls",
+        "shows": "Shows",
+        "seasonal": "Seasonal",
+        "sports": "Sports"
     }
 }

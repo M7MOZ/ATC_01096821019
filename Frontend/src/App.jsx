@@ -1,21 +1,15 @@
 import { useEffect } from "react";
 import Header from "./components/Header"
-import HeroSection from "./components/HeroSection"
-import { useTranslation } from "react-i18next";
-import EventsSection from "./components/EventsSection";
-
+import ReactModal from "react-modal";
+import Categories from "./components/Categories";
 function App() {
-  // const { i18n } = useTranslation();
-  // useEffect(() => {
-  //   // Set direction based on language (e.g., Arabic = 'rtl', others = 'ltr')
-  //   const direction = i18n.language === 'ar' ? 'rtl' : 'ltr';
-  //   document.documentElement.dir = direction; // Updates <html dir="rtl">
-  // }, [i18n.language]);
+  useEffect(() => {
+    ReactModal.setAppElement('#root');
+  }, []);
   return (
     <div>
       <Header/>
-      <HeroSection/>
-      <EventsSection/>
+      {/* <Categories/> */}
     </div>
   )
 }

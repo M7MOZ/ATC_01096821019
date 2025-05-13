@@ -1,8 +1,9 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import userRoutes from './routes/user.route.js';
+import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.route.js';
+import eventRoutes from './routes/event.route.js';
 dotenv.config();
 
 
@@ -15,9 +16,11 @@ app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
 
-app.use("/api/user", userRoutes);
+app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
+
+app.use('/api/events', eventRoutes);
 
 app.use((err, req, res, next) => {
     const statusCode = err.status || 500;
