@@ -31,13 +31,13 @@ function Categories()
     const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState("trending");
     return (
-            <div className="flex gap-10 items-center text-2xl px-10">
+            <div className="flex gap-10 items-center justify-around text-2xl py-5 px-14 mt-20 shadow-md overflow-x-auto">
             {categories.map(({ id, icon }) => (
                 <div
                 key={id}
                 id={id}
                 onClick={() => setSelectedCategory(id)}
-                className={`p-1 flex flex-col items-center cursor-pointer gap-2 text-gray-700 hover:text-[#E32359] ${selectedCategory === id ? "border-b-2 border-[#E32359] text-[#E32359]" : ""}`} 
+                className={`p-1 flex flex-shrink-0 flex-col items-center cursor-pointer gap-2 text-gray-700 hover:text-[#E32359] ${selectedCategory === id ? "border-b-2 border-[#E32359] text-[#E32359]" : ""}`} 
                 >
                     {icon}
                     <span className="text-sm">{t(`categories.${id}`)}</span>
