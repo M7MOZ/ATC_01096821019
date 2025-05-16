@@ -2,8 +2,22 @@
 import Carousel from "./Carousel";
 import { FaStar } from "react-icons/fa";
 import { IoLocationOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 const EventCard = ({ event }) => {
+    const {t} = useTranslation();
+    const {user, setIsLoginModal} = useContext(AppContext);
+    const navigate = useNavigate();
+    const handleBooking = () => { 
+        if (user._id) {
+            navigate(`/event/${event._id}`);
+        } else {
+            setIsLoginModal(true);
+        }
+    }
+    const booked = user?.reservedEvents?.includes(event._id);
     return (
         <div className="w-full max-w-sm bg-white">
             <Carousel>
@@ -22,13 +36,11 @@ const EventCard = ({ event }) => {
                     <p className=" text-gray-800"><span className="flex gap-1"><FaStar className="text-sm mt-1"/>{event.rating}</span></p>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-800 truncate">{event.title}</h3>
-                <div className="flex items-center justify-between">
-                    <span className="flex gap-1 text-sm text-gray-500 "><IoLocationOutline className="text-base"/>{event.location}</span>
-                    <Link to={`/event/${event._id}`}>
-                        <button className=" px-4 py-2 bg-[#E32359] text-white rounded-lg cursor-pointer">
-                            Book Now
-                        </button>
-                    </Link>
+                <div className="flex justify-between">
+                    <span className="flex gap-1 text-sm text-gray-500 mt-5"><IoLocationOutline className="text-base"/>{event.location}</span>
+                    <button disabled = {booked} onClick={handleBooking} className={`p-2 w-25 text-white font-medium rounded ${!booked ? "bg-[#E32359] cursor-pointer" : "bg-[#E32359]/80" }`}>
+                        {booked? t("events.booked") :t("events.book")}
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,18 +1,17 @@
-import { IoIosSearch } from "react-icons/io";
+// import { IoIosSearch } from "react-icons/io";
 import { MdLanguage } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaRegUser  } from "react-icons/fa";
 import LoginModal from "./Login";
 import SignupModal from "./Signup";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { AppContext } from "../context/AppContext.jsx";
 import { useContext, useState } from "react";
 import { changeLanguage } from "../i18n.js";
 import AddEventModal from "./AddEvent.jsx";
 import axios from "axios";
-import Categories from "./Categories.jsx";
 function Header() {
-    const {t} = useTranslation();
+    // const {t} = useTranslation();
     const {isSignUpModal, isLoginModal, user, setEvents, setIsAddEventModal} = useContext(AppContext);
     const [authMenu, setAuthMenu] = useState(false);
 
@@ -26,21 +25,21 @@ function Header() {
     };
 
     return (
-        <div className={`force-ltr px-8 flex bg-[#F8F8F5] border-b-1 border-gray-100 fixed top-0 left-0 right-0 `} >
+        <div className={`force-ltr px-8 flex justify-between bg-[#F8F8F5] border-b-1 border-gray-100 fixed top-0 left-0 right-0 `} >
             <img src="https://www.peek.com/images/nav/peek-logo-dde124cc27ad821dce0f0385caad1b5e.png?vsn=d" alt="logo" className="w-17 h-17"/>
-            <div className="flex flex-row-reverse m-4 py-1 px-3 bg-gray-50 rounded-2xl w-[455px] border border-gray-200 items-center mx-auto">
+            {/* <div className="flex flex-row-reverse m-4 py-1 px-3 bg-gray-50 rounded-2xl w-[455px] border border-gray-200 items-center mx-auto">
                 <IoIosSearch className="text-2xl"/>
                 <input type="text" placeholder={t("header.search")} className=" p-2 flex-1 outline-none "/>
-            </div>
+            </div> */}
             <div className="flex items-center gap-5 cursor-pointer" >
                 <div onClick={toggleAuthMenu} className="flex gap-2 items-center bg-gray-50 border border-gray-200 p-1 rounded-sm hover:shadow-sm transition-all group relative">
                     <RxHamburgerMenu className="text-3xl text-gray-800"/>
                     {
-                        user.image ? <img src={`https://ui-avatars.com/api/?name=${user.username}&size=400`} alt="user" className="w-8 h-8 rounded-full"/> : <FaRegUser className="text-2xl text-gray-800"/>
+                        user._id ? <img src={`https://ui-avatars.com/api/?name=${user.username}&size=400`} alt="user" className="w-8 h-8 rounded-full"/> : <FaRegUser className="text-2xl text-gray-800"/>
                     }
                     <div className={` ${authMenu? "absolute" : "hidden"} z-50 right-0 top-10 bg-white shadow-lg rounded-lg p-2 w-30 flex flex-col items-center gap-2`}>
                         {
-                            user.username ? (
+                            user._id ? (
                                 <>
                                     <AddEventModal
                                         onSuccess={fetchEvents}

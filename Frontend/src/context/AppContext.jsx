@@ -37,21 +37,13 @@ const AppProvider = ({ children }) => {
       try {
         const { data } = await axios.get("/api/auth/me", { withCredentials: true });
         setUser(data);
+        
       } catch (err) {
         console.log(err);
       }
     };
-    const fetchEvents = async () => {
-      try {
-        const { data } = await axios.get("/api/events");
-        setEvents(data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
+    
     fetchUser();
-    fetchEvents();
   }, []);
 
   return (

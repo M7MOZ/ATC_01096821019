@@ -5,6 +5,7 @@ import ReactModal from "react-modal";
 import EventDetails from "./pages/EventDetails";
 import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
+import CongratsPage from "./pages/CongratsPage";
 function App() {
   useEffect(() => {
     ReactModal.setAppElement('#root');
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/event/:id" element={<EventDetails />} />
         <Route path="/admin" element={<AdminPage />} />
+        <Route path="/congrats" element= {<CongratsPage />} />
       </Routes>
     </div>
   )

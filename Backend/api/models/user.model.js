@@ -14,10 +14,8 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  image: {
-    type: String,
-    default: 'https://www.dreamstime.com/default-avatar-profile-icon-social-media-user-image-gray-blank-silhouette-vector-illustration-image305504015',
-  },
+  reservedEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'event' }],
+  savedEvents: [{ type: mongoose.Schema.Types.ObjectId, ref: 'event' }],
 }, {
   timestamps: true,
 });

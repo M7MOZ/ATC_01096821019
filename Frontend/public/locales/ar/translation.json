@@ -29,5 +29,20 @@
         "shows": "العروض",
         "seasonal": "موسمي",
         "sports": "الرياضة"
+    },
+    "events": {
+        "event": "حدث",
+        "events": "الأحداث",
+        "eventDetails": "تفاصيل الحدث",
+        "eventName": "اسم الحدث",
+        "eventDate": "تاريخ الحدث",
+        "eventTime": "وقت الحدث",
+        "eventLocation": "موقع الحدث",
+        "eventDescription": "وصف الحدث",
+        "eventPrice": "سعر الحدث",
+        "eventCategory": "فئة الحدث",
+        "eventImage": "صورة الحدث",
+        "book": "احجز الآن",
+        "booked": "تم الحجز"
     }
 }
