@@ -9,11 +9,29 @@
         "signup": "إنشاء حساب",
         "loading": "جارٍ التحميل...",
         "already": " هل لديك حساب بالفعل؟",
-        "dont": " ليس لديك حساب؟"
+        "dont": " ليس لديك حساب؟",
+        "exists": "المستخدم موجود بالفعل",
+        "wrong": "خطأ في البريد الإلكتروني أو كلمة المرور"
     },
     "header":{
         "search": "البحث",
-        "addEvent": "إضافة حدث"
+        "addEvent": "إضافة حدث",
+        "booked": "المحجوزات",
+        "saved": "المحفوظات",
+        "admin": "الإدارة"
+    },
+    "admin": {
+        "adminPanel": "ادارة الفعاليات",
+        "addEvent": "إضافة حدث",
+        "eventName": "اسم الحدث",
+        "eventDate": "تاريخ الحدث",
+        "eventTime": "وقت الحدث",
+        "eventLocation": "موقع الحدث",
+        "eventDescription": "وصف الحدث",
+        "eventPrice": "سعر الحدث",
+        "eventCategory": "فئة الحدث",
+        "eventImage": "صورة الحدث",
+        "add": "إضافة"
     },
     "categories": {
         "trending": "الأكثر رواجًا",
@@ -43,6 +61,8 @@
         "eventCategory": "فئة الحدث",
         "eventImage": "صورة الحدث",
         "book": "احجز الآن",
-        "booked": "تم الحجز"
+        "booked": "تم الحجز",
+        "bookedEvents": "جميع الأحداث المحجوزة",
+        "congratulations": "تهانينا! لقد قمت بحجز هذا الحدث بنجاح."
     }
 }

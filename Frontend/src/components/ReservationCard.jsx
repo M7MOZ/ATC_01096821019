@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useMutation } from "@tanstack/react-query";
+import { QueryClient, useMutation } from "@tanstack/react-query";
 import { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -13,18 +13,15 @@ function ReservationCard({event}) {
     const navigate = useNavigate();
     const {user} = useContext(AppContext);
     const userId = user._id;
-    console.log('userId:', userId);
-    
+    const queryClient = new QueryClient();
     const { mutate, isPending } = useMutation({
         mutationFn: () => bookEvent({ userId, eventId: event._id }),
-        onSuccess: (data) => {
+        onSuccess: async(data) => {
             console.log("Booking success:", data);
+            await queryClient.invalidateQueries(['user']);
+            await queryClient.invalidateQueries(['reservedEvents']);
             navigate("/congrats");
-        },
-        onError: (err) => {
-            console.error("Booking failed:", err);
-            alert("Booking failed. Please try again.");
-        },
+        }
     });
 
     const handleReserve = () => {

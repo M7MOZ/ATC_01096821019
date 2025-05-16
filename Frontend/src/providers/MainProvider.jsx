@@ -6,11 +6,11 @@ function MainProvider({children}) {
     const queryClient = new QueryClient();
     return (
         <BrowserRouter>
-            <AppProvider>
-                <QueryClientProvider client={queryClient}>
+            <QueryClientProvider client={queryClient}>
+                <AppProvider>
                     {children}                
-                </QueryClientProvider>  
-            </AppProvider>
+                </AppProvider>
+            </QueryClientProvider>  
         </BrowserRouter>
     )
 }

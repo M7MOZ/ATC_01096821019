@@ -7,6 +7,7 @@ import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
 import CongratsPage from "./pages/CongratsPage";
 function App() {
+  
   useEffect(() => {
     ReactModal.setAppElement('#root');
   }, []);
