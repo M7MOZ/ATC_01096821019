@@ -54,7 +54,7 @@ This project consists of a Backend and Frontend that need to be run simultaneous
 - Any changes made to the code will automatically reload the respective server/application
 
 ## Admin email
- - to access the admin auth login with this data
+ - to access the admin auth login use this data
  - email : admin@gmail.com
  - password : admin
 
