@@ -18,10 +18,6 @@ node_modules/
 **/dist/
 **/build/
 
-# dotenv environment variables
-**/.env
-**/.env.* # e.g. .env.development, .env.local
-
 # OS-specific files
 .DS_Store
 Thumbs.db
