@@ -53,5 +53,10 @@ This project consists of a Backend and Frontend that need to be run simultaneous
 - Keep both terminal windows open during development
 - Any changes made to the code will automatically reload the respective server/application
 
+## Admin email
+ - to access the admin auth login with this data
+ - email : admin@gmail.com
+ - password : admin
+
 ## I included the .env files because i dont know how to debloy the Backend i wish it is not a big problem
 
