@@ -18,20 +18,21 @@
         "addEvent": "إضافة حدث",
         "booked": "المحجوزات",
         "saved": "المحفوظات",
-        "admin": "الإدارة"
+        "admin": "اضافة حدث"
     },
     "admin": {
         "adminPanel": "ادارة الفعاليات",
         "addEvent": "إضافة حدث",
-        "eventName": "اسم الحدث",
-        "eventDate": "تاريخ الحدث",
-        "eventTime": "وقت الحدث",
-        "eventLocation": "موقع الحدث",
-        "eventDescription": "وصف الحدث",
-        "eventPrice": "سعر الحدث",
-        "eventCategory": "فئة الحدث",
-        "eventImage": "صورة الحدث",
-        "add": "إضافة"
+        "eventName": "العنوان ",
+        "startDate": " تاريخ البداية ",
+        "endDate": " تاريخ النهاية ",
+        "eventLocation": "الموقع ",
+        "eventDescription": "الوصف ",
+        "eventPrice": "السعر ",
+        "eventRating": "التقييم ",
+        "imageUrl": "رابط الصورة",
+        "delete": "حذف",
+        "edit": "تعديل"
     },
     "categories": {
         "trending": "الأكثر رواجًا",
@@ -63,6 +64,7 @@
         "book": "احجز الآن",
         "booked": "تم الحجز",
         "bookedEvents": "جميع الأحداث المحجوزة",
-        "congratulations": "تهانينا! لقد قمت بحجز هذا الحدث بنجاح."
+        "congratulations": "تهانينا! لقد قمت بحجز هذا الحدث بنجاح.",
+        "stayTuned": "القريب من الفعاليات قريبا"
     }
 }

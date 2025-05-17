@@ -32,3 +32,40 @@ export const createEvent = async (req, res, next) => {
     next(errorHandler(500, "Failed to create event."));
   }
 };
+
+export const deleteEvent = async (req, res, next) => {
+  try {
+    const event = await Event.findByIdAndDelete(req.params.id);
+
+    if (!event) {
+      return next(errorHandler(404, "Event not found."));
+    }
+
+    res.status(200).json({ message: "Event deleted successfully." });
+  } catch (err) {
+    next(errorHandler(500, "Failed to delete the event."));
+  }
+};
+
+export const updateEvent = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const updatedEvent = await Event.findByIdAndUpdate(id, req.body, {
+      new: true,           
+      runValidators: true, 
+    });
+
+    if (!updatedEvent) {
+      return next(errorHandler(404, "Event not found."));
+    }
+
+    res.status(200).json({
+      message: "Event updated successfully",
+      event: updatedEvent,
+    });
+  } catch (err) {
+    next(errorHandler(500, "Failed to update the event."));
+  }
+};
+
+

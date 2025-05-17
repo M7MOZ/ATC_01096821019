@@ -3,12 +3,12 @@ import ReactModal from 'react-modal';
 import { IoCloseSharp } from "react-icons/io5";
 import { AppContext } from '../context/AppContext';
 import { useTranslation } from 'react-i18next';
-import { useMutation } from '@tanstack/react-query';
+import { useQueryClient, useMutation } from '@tanstack/react-query';
 import { login } from '../services/auth';
 import OAuth from './OAuth';
 function LoginModal() {
   
-  const {isLoginModal, setIsLoginModal, modalStyleObject, setUser, setIsSignUpModal} = useContext(AppContext);
+  const {isLoginModal, setIsLoginModal, modalStyleObject, setIsSignUpModal} = useContext(AppContext);
   const loginStyleObject = {...modalStyleObject, content: {...modalStyleObject.content, height: "72vh"}}
   const {t} = useTranslation();
   const [loginData, setLoginData] = useState({});
@@ -20,10 +20,11 @@ function LoginModal() {
       [e.target.id]: e.target.value
     });
   }
+  const queryClient = useQueryClient();
   const { mutate, isPending } = useMutation({
       mutationFn: () => login({ email : loginData.email, password: loginData.password  }),
-      onSuccess: (data) => {
-          setUser(data);
+      onSuccess: async() => {
+          await queryClient.invalidateQueries({ queryKey: ['user'] });
           setIsLoginModal(false);
       },
       onError: (error) => {

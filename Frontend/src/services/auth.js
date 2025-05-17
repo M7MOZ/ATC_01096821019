@@ -14,3 +14,4 @@ export const getUser = async () => {
     const { data } = await axios.get("/auth/me");
     return data;
 }
+

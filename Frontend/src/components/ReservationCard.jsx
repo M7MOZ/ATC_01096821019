@@ -1,18 +1,18 @@
 /* eslint-disable react/prop-types */
 import { QueryClient, useMutation } from "@tanstack/react-query";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { MdOutlineCancel  } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../context/AppContext";
 import { bookEvent } from "../services/users";
+import { useUser } from "../hooks/authHooks.js";
 function ReservationCard({event}) {
     const [spots, setSpots] = useState(1);
     const [selectedDate, setSelectedDate] = useState(null);
     const navigate = useNavigate();
-    const {user} = useContext(AppContext);
-    const userId = user._id;
+    const { data: user } = useUser();
+    const userId = user?._id;
     const queryClient = new QueryClient();
     const { mutate, isPending } = useMutation({
         mutationFn: () => bookEvent({ userId, eventId: event._id }),

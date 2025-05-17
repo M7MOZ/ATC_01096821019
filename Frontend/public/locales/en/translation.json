@@ -18,20 +18,21 @@
         "addEvent": "Add Event",
         "booked": "Booked",
         "saved": "Saved",
-        "admin": "Admin"
+        "admin": "Add Event"
     },
     "admin": {
         "adminPanel": "Admin Panel",
         "addEvent": "Add Event",
-        "eventName": "Event Name",
-        "eventDate": "Event Date",
-        "eventTime": "Event Time",
-        "eventLocation": "Event Location",
-        "eventDescription": "Event Description",
-        "eventPrice": "Event Price",
-        "eventCategory": "Event Category",
-        "eventImage": "Event Image",
-        "add": "Add"
+        "eventName": "Title",
+        "startDate": "Start Date",
+        "endDate": "End Date",
+        "eventLocation": "Location",
+        "eventDescription": "Description",
+        "eventPrice": "Price",
+        "eventRating": "Rating",
+        "imageUrl": "Image URL",
+        "delete": "Delete",
+        "edit": "Edit"
     },
     "categories": {
         "trending": "Trending",
@@ -63,6 +64,7 @@
         "book": "Book Now",
         "booked": "Booked",
         "bookedEvents": "all your reservations",
-        "congratulations": "Congratulations! You have successfully booked this event."
+        "congratulations": "Congratulations! You have successfully booked this event.",
+        "stayTuned": "Stay Tuned"
     }
 }

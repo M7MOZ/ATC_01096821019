@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { FaFire, FaTheaterMasks  } from "react-icons/fa";
 import { MdTour, MdFamilyRestroom, MdOutlineSportsSoccer } from "react-icons/md";
 import { LiaMountainSolid } from "react-icons/lia";
@@ -8,7 +9,6 @@ import { HiOutlinePaperAirplane } from "react-icons/hi2";
 import { BsTicketPerforated } from "react-icons/bs";
 import { GiBeveledStar } from "react-icons/gi";
 import { useTranslation } from "react-i18next";
-import { useState } from "react";
 
 const categories = [
     { id: "trending", icon: <FaFire /> },
@@ -26,10 +26,9 @@ const categories = [
     { id: "sports", icon: <MdOutlineSportsSoccer /> },
 ];
 
-function Categories() 
+function Categories({selectedCategory, setSelectedCategory}) 
 {
     const { t } = useTranslation();
-    const [selectedCategory, setSelectedCategory] = useState("trending");
     return (
             <div className="flex gap-10 items-center justify-around text-2xl py-5 px-14 mt-20 shadow-md overflow-x-auto">
             {categories.map(({ id, icon }) => (

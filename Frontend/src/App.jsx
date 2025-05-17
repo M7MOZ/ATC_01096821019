@@ -6,6 +6,7 @@ import EventDetails from "./pages/EventDetails";
 import AdminPage from "./pages/AdminPage";
 import HomePage from "./pages/HomePage";
 import CongratsPage from "./pages/CongratsPage";
+import EditEvent from "./pages/EditEvent";
 function App() {
   
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/event/:id" element={<EventDetails />} />
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/congrats" element= {<CongratsPage />} />
+        <Route path="/edit/:id" element={<EditEvent />} />
       </Routes>
     </div>
   )

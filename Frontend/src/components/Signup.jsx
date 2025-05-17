@@ -5,9 +5,9 @@ import { AppContext } from '../context/AppContext';
 import { useTranslation } from 'react-i18next';
 import OAuth from './OAuth';
 import { signUp } from '../services/auth';
-import { useMutation } from '@tanstack/react-query';
+import { useQueryClient, useMutation } from '@tanstack/react-query';
 function SignupModal() {
-  const {isSignUpModal, setIsSignUpModal, modalStyleObject, setIsLoginModal, setUser} = useContext(AppContext);
+  const {isSignUpModal, setIsSignUpModal, modalStyleObject, setIsLoginModal} = useContext(AppContext);
   const {t} = useTranslation();
   // a state that holds the data of the signup form
   const [signUpData, setSignUpData] = useState({});
@@ -21,11 +21,11 @@ function SignupModal() {
   }
   // a function that handles the submit of the form
   // it sends a post request to the server with the data of the form
+  const queryClient =  useQueryClient();
   const { mutate, isPending } = useMutation({
       mutationFn: () => signUp({ username : signUpData.username, email : signUpData.email, password: signUpData.password  }),
-      onSuccess: (data) => {
-          setUser(data);
-          console.log(data);
+      onSuccess: async() => {
+          await queryClient.invalidateQueries({ queryKey: ['user'] });
           setIsSignUpModal(false);
       },
       onError: (error) => {

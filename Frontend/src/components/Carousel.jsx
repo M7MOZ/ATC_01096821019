@@ -1,13 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
-import { IoBookmarkOutline, IoBookmark  } from "react-icons/io5";
 function Carousel({children}) {
-    const [save, isSaved] = useState(false);
+    
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const togleSave = () => {
-        isSaved(!save);
-    }
     const prev = () => {
         setCurrentImageIndex((prevIndex) => (prevIndex - 1 + children.length) % children.length);
     }
@@ -36,9 +32,6 @@ function Carousel({children}) {
                         ></div>
                     ))}
                 </div>
-            </div>
-            <div onClick={togleSave} className="absolute top-2 right-2 text-3xl text-white hover:text-4xl transition-all duration-300">
-                {save ? <IoBookmark className="text-[#E32359]"/> : <IoBookmarkOutline/>}
             </div>
         </div>
     )
