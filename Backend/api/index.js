@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.route.js';
 import eventRoutes from './routes/event.route.js';
 import userRoutes from './routes/user.route.js';
+import cors from 'cors';
 dotenv.config();
 
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.listen(3000, () => {
     console.log('Server is running on port 3000');
 });
+app.use(cors());
 
 app.use(cookieParser());
 
